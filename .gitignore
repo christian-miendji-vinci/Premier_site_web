@@ -3,3 +3,6 @@ node_modules/
 
 # ignorer le répertoire .vscode qui contient les fichiers de VSCode
 /.vscode
+
+# Build output (TypeScript compiled JS)
+dist/
