@@ -16,7 +16,7 @@ interface ProgrammingLanguage {
   description: string;
   name: string;
   image: string;
-  text: string ;
+  text: string;
 }
 
 interface Developper {
@@ -30,12 +30,13 @@ interface Developper {
 }
 
 interface Products {
-  id: number ;
-  price: number ;
-  image : string ;
-  description : string ;
-  quantityAvailable: number ;
+  id: number;
+  price: number;
+  image: string;
+  description: string;
+  quantityAvailable: number;
 }
+
 
 type NewProogrammingLanguage = Omit<ProgrammingLanguage, "id">;
 type NewDevelopper = Omit<Developper, "id">;
@@ -53,15 +54,15 @@ interface JwtPayload {
 }
 
 export type {
-    Developper,
-    ProgrammingLanguage,
-    Products,
-    User,
-    JwtPayload,
-    AuthenticatedUser,
-    NewDevelopper,
-    NewProogrammingLanguage,
-    NewProduct,
-    PotentialUser,
-    AutenticatedRequest,
-} ;
+  Developper,
+  ProgrammingLanguage,
+  Products,
+  User,
+  JwtPayload,
+  AuthenticatedUser,
+  NewDevelopper,
+  NewProogrammingLanguage,
+  NewProduct,
+  PotentialUser,
+  AutenticatedRequest,
+};

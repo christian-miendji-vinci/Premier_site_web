@@ -1,0 +1,34 @@
+### Read all products with File variable
+@baseUrl = http://localhost:3000
+GET {{baseUrl}}/products
+
+### Read  products identified by 2
+GET {{baseUrl}}/products/5
+
+### Create a products by using the admin account
+#### First login as the admin
+##### Define a request variable nammed admin :
+# @name admin
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+    "username":"admin",
+    "password":"admin"
+}
+
+#### Create a product with the admin token
+POST {{baseUrl}}/products
+Content-Type: application/json
+Authorization: {{admin.response.body.token}}
+
+{
+    "price":600,
+    "image":"https://images.itnewsinfo.com/commun/nouveauxproduits/moyen/000000031169.jpg",
+    "description":"Disque dur de 1.2 To à 10000tours/minutes",
+    "quantityAvailable": 14
+}
+
+### Delete pizza identified by 6 with the admin token
+DELETE {{baseUrl}}/products/5
+Authorization: {{admin.response.body.token}}

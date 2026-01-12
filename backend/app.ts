@@ -1,7 +1,8 @@
-import cors from "cors";
+import cors from "cors" ;
 import express , {ErrorRequestHandler} from "express" ;
 import usersRouter from "./src/routes/users" ;
-
+import authsRouter from "./src/routes/auths" ;
+import productsRouter from "./src/routes/products" ;
 
 const app = express() ;
 
@@ -23,6 +24,8 @@ app.use(express.json()) ;
 app.use(express.urlencoded({ extended: false})) ;
 
 app.use("/users", usersRouter) ;
+app.use("/auths", authsRouter) ;
+app.use("/products", productsRouter) ;
 
 const errorHandler: ErrorRequestHandler = (err , _req , res ,_next) => {
     console.error(err.stack);
